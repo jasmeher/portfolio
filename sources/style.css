@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* LIGHT THEME */
+  --text-light: #272726;
+  --background-light: #e6e6e6;
+  --accent-light: #e4977ba2;
+  --gradient1-light: #f3904f;
+  --gradient2-light: #3b4371;
+  --link-light: #b8f2e6;
+
+  /* DARK THEME */
+  --text-dark: #e7e7e0;
+  --background-dark: #e6e6e6;
+  --accent-dark: #43596ea2;
+  --gradient1-dark: #006cca;
+  --gradient2-dark: #000428;
+  --link-dark: #e4977b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.light-theme {
+  --text: var(--text-light);
+  --background: var(--background-light);
+  --accent: var(--accent-light);
+  --gradient1: var(--gradient1-light);
+  --gradient2: var(--gradient2-light);
+  --link: var(--link-light);
+}
+
+.dark-theme {
+  --text: var(--text-dark);
+  --background: var(--background-dark);
+  --accent: var(--accent-dark);
+  --gradient1: var(--gradient1-dark);
+  --gradient2: var(--gradient2-dark);
+  --link: var(--link-dark);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--gradient4); /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    var(--gradient1) 60%,
+    var(--gradient2)
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    var(--gradient1) 60%,
+    var(--gradient2)
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to top,
+    var(--gradient1) 60%,
+    var(--gradient2)
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e89d11', endColorstr='#b15900',GradientType=0 );
+  transition: 500s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.experience-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.experience {
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.theme-toggle-bar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 48px;
+  right: 48px;
+  z-index: 99999;
+  gap: 16px;
+}
+
+.light-mode,
+.dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.toggle-button {
+  cursor: pointer;
+  position: relative;
+  width: 56px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.toggle-circle {
+  position: absolute;
+  left: 6px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent);
+  transition: 200ms ease-in;
+}
+
+.toggle-button:hover .toggle-circle {
+  transform: scale(0.85);
+}
+
+.slide {
+  left: 28px;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-wrapper {
+  position: relative;
+  width: calc(100% - 160px);
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.hero-main {
+  position: absolute;
+  bottom: 168px;
+  left: 0;
+}
+
+.hero-main-title {
+  font-size: 64px;
+  width: fit-content;
+  padding: 0 10px;
+  transition: 200ms ease;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: none;
+  color: var(--background);
+}
+
+.hero-main-description {
+  font-size: 18px;
+  width: fit-content;
+  padding: 0 10px;
+  color: var(--background);
+  transition: 400ms ease;
+}
+
+.hero-second {
+  position: absolute;
+  top: calc(50% - 120px);
+  right: 0;
+  color: var(--background);
+}
+
+.hero-second-subheading {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.section-margin {
+  height: 3000px;
+  width: 100%;
+}
+
+.section {
+  width: 50%;
+  padding: 1000px 4%;
+  margin: 0;
+  background-color: var(--accent);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 500ms ease, color 500ms ease;
+}
+
+.last {
+  padding: 1000px 4% 2% 4% !important;
+}
+
+.left {
+  margin-right: auto;
+}
+.right {
+  margin-left: auto;
+}
+
+.section-intro-wrapper {
+  position: relative;
+  padding: 20% 0%;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-detail-wrapper {
+  position: relative;
+  padding: 20% 5%;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin-top: 64px;
+}
+
+.section-text {
+  line-height: 2;
+  margin-top: 18px;
+  font-size: 16px;
+}
+
+.section-title {
+  font-size: 10vmin;
+  height: 2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: screen;
+  text-align: center;
+  text-transform: uppercase;
+}
+.section-title.invert span {
+  color: black;
+}
+.section-title.invert span::before {
+  -webkit-text-stroke: 0.1em var(--accent);
+}
+.section-title span {
+  --color: var(--accent);
+  font-weight: 700;
+  font-style: italic;
+  display: block;
+  position: absolute;
+  color: var(--color);
+  letter-spacing: -0.005em;
+}
+.section-title span::before,
+.section-title span::after {
+  content: attr(data-text);
+  display: block;
+  position: relative;
+  padding: 0 0.1em;
+  z-index: 1;
+}
+.section-title span::before {
+  position: absolute;
+  -webkit-text-stroke: 0.1em black;
+  z-index: 0;
+}
+.section-title span:first-child {
+  transform: translate(-0.255em, -0.75em);
+}
+.section-title span:last-child {
+  --color: #b6acff;
+  /* transform: translate(0.255em, 0.25em); */
+}
+
+.section-number {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.section-list {
+  margin: 40px 0;
+  padding-left: 40px;
+}
+
+.section-list > li {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 968px) {
+  .section {
+    width: 100%;
+    backdrop-filter: blur(5px);
+  }
+  .progress-bar-wrapper-left {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hero-main-title {
+    font-size: 10vw;
+  }
+  .hero-main-description {
+    font-size: 3vw;
+  }
+
+  .hero-main {
+    bottom: 70px;
+  }
+
+  .hero-second {
+    top: calc(50% - 250px);
+  }
+  .hero-second-description {
+    font-size: 3vw;
+  }
+  .hero-second-subheading {
+    font-size: 5vw;
+  }
+}
