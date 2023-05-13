@@ -37,7 +37,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -74,7 +74,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -111,7 +111,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -148,7 +148,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -185,7 +185,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -222,7 +222,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -284,8 +284,8 @@ export default class Controls {
       this.view.spherical.value.radius = 138.33333282470704;
       this.view.spherical.value.theta = -0.7920680895174649;
 
-      this.view.drag.previous.x = 265;
-      this.view.drag.previous = 267;
+      // this.view.drag.previous.x = 265;
+      // this.view.drag.previous.y = 267;
 
       this.firstMoveTimeline = new GSAP.timeline({
         scrollTrigger: {
@@ -294,7 +294,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -331,7 +331,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -368,7 +368,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -405,7 +405,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -442,7 +442,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
@@ -479,7 +479,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
-          preventOverlaps: true,
+          fastScrollEnd: true,
         },
       })
         .to(
