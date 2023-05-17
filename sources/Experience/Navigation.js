@@ -38,10 +38,6 @@ export default class Navigation {
     // this.view.spherical.value.radius = 5
     this.view.spherical.smoothed = this.view.spherical.value.clone();
     this.view.spherical.smoothing = 0.005;
-    this.view.spherical.limits = {};
-    this.view.spherical.limits.radius = { min: 10, max: 50 };
-    this.view.spherical.limits.phi = { min: 0.01, max: Math.PI * 0.5 };
-    this.view.spherical.limits.theta = { min: -Math.PI * 0.5, max: 0 };
 
     this.view.target = {};
     this.view.target.value = new THREE.Vector3(
@@ -52,10 +48,6 @@ export default class Navigation {
     // this.view.target.value.set(0, 3, -3)
     this.view.target.smoothed = this.view.target.value.clone();
     this.view.target.smoothing = 0.005;
-    this.view.target.limits = {};
-    this.view.target.limits.x = { min: -4, max: 4 };
-    this.view.target.limits.y = { min: 1, max: 6 };
-    this.view.target.limits.z = { min: -4, max: 4 };
 
     this.view.drag = {};
     this.view.drag.delta = {};
@@ -105,7 +97,7 @@ export default class Navigation {
         _event.ctrlKey ||
         _event.shiftKey;
 
-      this.view.down(_event.clientX, _event.clientY);
+      // this.view.down(_event.clientX, _event.clientY);
 
       // window.addEventListener("mouseup", this.view.onMouseUp);
       // window.addEventListener("mousemove", this.view.onMouseMove);
@@ -184,14 +176,6 @@ export default class Navigation {
     // window.addEventListener("wheel", this.view.onWheel, { passive: false });
   }
 
-  // update() {
-  //   const viewPosition = new THREE.Vector3();
-  //   viewPosition.setFromSpherical(this.view.spherical.value);
-
-  //   this.camera.modes.default.instance.position.copy(viewPosition);
-  //   this.camera.modes.default.instance.lookAt(this.view.target);
-  // }
-
   update() {
     /**
      * View
@@ -199,15 +183,6 @@ export default class Navigation {
     // Zoom
     this.view.spherical.value.radius +=
       this.view.zoom.delta * this.view.zoom.sensitivity;
-
-    // // Apply limits
-    // this.view.spherical.value.radius = Math.min(
-    //   Math.max(
-    //     this.view.spherical.value.radius,
-    //     this.view.spherical.limits.radius.min
-    //   ),
-    //   this.view.spherical.limits.radius.max
-    // );
 
     // console.log(this.view);
 
@@ -224,20 +199,6 @@ export default class Navigation {
 
       this.view.target.value.add(up);
       this.view.target.value.add(right);
-
-      // // Apply limits
-      // this.view.target.value.x = Math.min(
-      //   Math.max(this.view.target.value.x, this.view.target.limits.x.min),
-      //   this.view.target.limits.x.max
-      // );
-      // this.view.target.value.y = Math.min(
-      //   Math.max(this.view.target.value.y, this.view.target.limits.y.min),
-      //   this.view.target.limits.y.max
-      // );
-      // this.view.target.value.z = Math.min(
-      //   Math.max(this.view.target.value.z, this.view.target.limits.z.min),
-      //   this.view.target.limits.z.max
-      // );
     } else {
       this.view.spherical.value.theta -=
         (this.view.drag.delta.x * this.view.drag.sensitivity) /
@@ -245,22 +206,6 @@ export default class Navigation {
       this.view.spherical.value.phi -=
         (this.view.drag.delta.y * this.view.drag.sensitivity) /
         this.config.smallestSide;
-
-      // Apply limits
-      // this.view.spherical.value.theta = Math.min(
-      //   Math.max(
-      //     this.view.spherical.value.theta,
-      //     this.view.spherical.limits.theta.min
-      //   ),
-      //   this.view.spherical.limits.theta.max
-      // );
-      // this.view.spherical.value.phi = Math.min(
-      //   Math.max(
-      //     this.view.spherical.value.phi,
-      //     this.view.spherical.limits.phi.min
-      //   ),
-      //   this.view.spherical.limits.phi.max
-      // );
     }
 
     this.view.drag.delta.x = 0;
